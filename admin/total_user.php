@@ -26,7 +26,7 @@
 		        </tr>
 		      </thread>
 							<?php
-							 $connection = mysqli_connect("localhost","root","","db_elearning");
+							 $connection = mysqli_connect("localhost","root","","signup");
 							 $query = "SELECT Fname,MobileNo FROM tblstudent";
 							 $query_run = mysqli_query($connection, $query);
               ?>
