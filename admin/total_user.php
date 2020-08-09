@@ -21,16 +21,20 @@
 				<table class="table" id="dataTable" width="100%" cellspacing="0">
 		      <thread>
 		        <tr>
+							<th>Id</th>
 		          <th>Name</th>
-		          <th>Mobile no</th>
+		          <th>Email</th>
+							<th>Mobile</th>
+							<th>Affiliate</th>
+							<th>EDIT</th>
+							<th>DELETE</th>
 		        </tr>
 		      </thread>
 							<?php
-							 $connection = mysqli_connect("localhost","root","","db_elearning");
-							 $query = "SELECT Fname,MobileNo FROM tblstudent";
+							 $connection = mysqli_connect("localhost","root","","signup");
+							 $query = "SELECT id,username,email,mobile,affiliate FROM registration";
 							 $query_run = mysqli_query($connection, $query);
               ?>
-
     <tbody>
       <?php
       if(mysqli_num_rows($query_run)>0)
@@ -39,8 +43,20 @@
         {
 					?>
 					<tr>
-						<td> <?php echo $row['Fname']; ?></td>
-						<td> <?php echo $row['MobileNo']; ?></td>
+						<td> <?php echo $row['id']; ?></td>
+						<td> <?php echo $row['username']; ?></td>
+						<td> <?php echo $row['email']; ?></td>
+						<td> <?php echo $row['mobile']; ?></td>
+						<td> <?php echo $row['affiliate']; ?></td>
+						<td>
+								<form action="register_edit.php" method="post">
+										<input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
+										<button type="submit" name="edit_btn" class="btn btn-success">EDIT</button>
+								<form>
+						</td>
+						<td>
+								<button type="submit"class="btn btn-danger">DELETE</button>
+						</td>
 					<tr>
         <?php
 			   }

@@ -41,6 +41,12 @@
 					<tr>
 						<td> <?php echo $row['Fname']; ?></td>
 						<td> <?php echo $row['MobileNo']; ?></td>
+						<td>
+								<button type="submit"class="btn btn-success">EDIT</button>
+						</td>
+						<td>
+								<button type="submit"class="btn btn-danger">DELETE</button>
+						</td>						
 					<tr>
         <?php
 			   }

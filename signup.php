@@ -35,15 +35,15 @@ include 'db_connect.php';
 		$mobile = mysqli_real_escape_string($con, $_POST['mobile']);
 		$password = mysqli_real_escape_string($con, $_POST['password']);
 		$cfmpassword = mysqli_real_escape_string($con, $_POST['cfmpassword']);
-		
+
 		$pass = password_hash($password, PASSWORD_BCRYPT);
 		$cpass = password_hash($cfmpassword, PASSWORD_BCRYPT);
-		
+
 		$emailquery = "select * from registration where email='$email' ";
 		$query = mysqli_query($con,$emailquery);
-		
+
 		$emailcount = mysqli_num_rows($query);
-		
+
 		if($emailcount>0)
 		{
 			echo "email already exist";
@@ -52,11 +52,11 @@ include 'db_connect.php';
 		{
 			if($password === $cfmpassword)
 			{
-				$insertquery = "insert into registration(username,email,mobile,password,cpassword) 
+				$insertquery = "insert into registration(username,email,mobile,password,cpassword)
 				values('$username','$email','$mobile','$pass','$cpass')";
-				
+
 				$iquery = mysqli_query($con, $insertquery);
-				
+
 				if($iquery)
 				{
 					?>
@@ -67,7 +67,7 @@ include 'db_connect.php';
 					header('location: login.php');
 				}else
 				{
-					
+
 					?>
 						<script>
 							alert(" not Inserted");
@@ -109,7 +109,7 @@ include 'db_connect.php';
 							<div class="form-group">
 								<input class="form-control" placeholder="Affiliate" name="affiliate" type="text" autofocus="">
 							</div>
-							
+
 							<input type="submit" name="submit" class="btn btn-primary" value="Sign Up">
 							<div style="margin-top:10px;">
 								<p>Have an account? <a href="login.php">Login Now</a><p>
@@ -122,8 +122,8 @@ include 'db_connect.php';
 				</div>
 			</div>
 		</div><!-- /.col-->
-	</div><!-- /.row -->	
-	
+	</div><!-- /.row -->
+
 </div>
 <script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
