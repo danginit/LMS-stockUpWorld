@@ -4,9 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Total users</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/course/bootstrap.min.css" rel="stylesheet">
+	<link href="css/course/font-awesome.min.css" rel="stylesheet">
+	<link href="css/course/styles.css" rel="stylesheet">
 
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -20,7 +20,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>StockUpWorld </span>TOTAL USER</a>
+				<a class="navbar-brand" href="#"><span>StockUpWorld </span>Courses</a>
 				<ul class="nav navbar-top-links navbar-right">
 
 							</li>
@@ -40,9 +40,8 @@
 		</div>
 		<div class="divider"></div>
 		<ul class="nav menu">
-			<li class="active"><a href=""><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li ><a href="total_user.php"><em class="fa fa-dashboard">&nbsp;</em> Total User</a></li>
-			<li ><a href="affliate.php"><em class="fa fa-dashboard">&nbsp;</em> Affliate</a></li>
+			<li class="active"><a href=""><em class="fa fa-dashboard">&nbsp;</em> My Courses</a></li>
+				
 		</ul>
 	</div><!--/.sidebar-->
 </body>

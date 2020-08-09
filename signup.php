@@ -87,7 +87,7 @@ include 'db_connect.php';
 	<div class="row" >
 		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-4" >
 			<div class="login-panel panel panel-default" >
-				<div class="panel-heading" >Sign Up</div>
+				<div><h2 style="text-align:center;">Sign Up</h2></div>
 				<div class="panel-body" >
 					<form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST" >
 						<fieldset>
@@ -111,6 +111,9 @@ include 'db_connect.php';
 							</div>
 							
 							<input type="submit" name="submit" class="btn btn-primary" value="Sign Up">
+							<div style="margin-top:10px;">
+								<p>Have an account? <a href="login.php">Login Now</a><p>
+							</div>
 							<!--<div>
 								<p>Have an account? <a href="login.php">Login</a><p>
 							</div>-->

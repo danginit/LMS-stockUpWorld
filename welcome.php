@@ -11,10 +11,59 @@ if(!isset($_SESSION['username']))
 <html lang="en">
 
 <head>
+	<style>
+.dropbtn {
+  background-color: #51be78;
+  color: white;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #51be78;}
+</style>	
+	
   <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  
+  
+ 
+ 
 
   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -99,7 +148,15 @@ if(!isset($_SESSION['username']))
                     <a href="#contact" class="nav-link text-left">Contact</a>
                   </li>
 				  <li>
-                    <a href="contact.html" class="nav-link text-left">Profile</a>
+				  <div class="dropdown">
+				   <button class="dropbtn">Profile</button>
+						<div class="dropdown-content">
+							<a href="my_course.php">My Course</a>
+							<a href="acc_seting.php">Account Setting</a>
+							<a href="purchase_history.php">Purchase History</a>
+						</div>
+						</div>
+                    <!-- <a href="manage_profile.php" class="nav-link text-left">Profile</a> -->
                   </li>
               </ul>                                                                                                                                                                                                                                                                                          </ul>
             </nav>

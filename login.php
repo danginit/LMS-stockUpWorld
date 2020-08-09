@@ -70,7 +70,7 @@ if(isset($_POST['submit']))
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-4">
 			<div class="login-panel panel panel-default">
-				<div class="panel-heading">Log in</div>
+				<div ><h2 style="text-align:center;">Log in</h2></div>
 				<div class="panel-body">
 					<form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST">
 						<fieldset>
@@ -81,6 +81,9 @@ if(isset($_POST['submit']))
 								<input class="form-control" placeholder="Password" name="password" type="password" value="" required>
 							</div>
 							<input type="submit" name="submit" class="btn btn-primary" value="Login">
+							<div style="margin-top:10px;">
+								<p>Forgot Password don't worry <a href="recover_email.php">Click here</a><p>
+							</div>
 							<div>
 								<p>Don't have an account? <a href="signup.php">Signup Now</a><p>
 							</div>
