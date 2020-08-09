@@ -1,4 +1,6 @@
-<?php include('sidebar/sidebar.php');?>
+<?php 
+session_start();
+include('sidebar/sidebar.php');?>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
   <div class="row">
     <ol class="breadcrumb">
@@ -20,11 +22,13 @@
   $connection = mysqli_connect("localhost","root","","signup");
   if(isset($_POST['edit_btn']))
   {
-     $query = "SELECT * FROM registration";
+	 $id = $_POST['edit_id'];
+     $query = "SELECT * FROM registration where Id='$id'";
      $query_run = mysqli_query($connection, $query);
 
-     foreach($query_run as $row)
-     {
+	foreach($query_run as $row)
+	{
+						
 ?>
 
   <div class="panel panel-container">
@@ -35,11 +39,10 @@
         		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-4" >
         			<div class="login-panel panel panel-default" >
         				<div class="panel-body" >
+						
         					<form action="code.php" method="POST" >
+							
         						<fieldset>
-                      <div class="form-group">
-                        <input class="form-control" value="<?php echo $row['id']?>" name="edit_id" type="text" autofocus="" required>
-                      </div>
         							<div class="form-group">
         								<input class="form-control" value="<?php echo $row['username']?>" name="edit_username" type="text" autofocus="" required>
         							</div>

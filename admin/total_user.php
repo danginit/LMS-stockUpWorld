@@ -1,4 +1,6 @@
-<?php include('sidebar/sidebar.php');?>
+<?php 
+session_start();
+include('sidebar/sidebar.php');?>
 
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
@@ -22,8 +24,8 @@
 		      <thread>
 		        <tr>
 							<th>Id</th>
-		          <th>Name</th>
-		          <th>Email</th>
+							<th>Name</th>
+							<th>Email</th>
 							<th>Mobile</th>
 							<th>Affiliate</th>
 							<th>EDIT</th>
@@ -52,7 +54,7 @@
 								<form action="register_edit.php" method="post">
 										<input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
 										<button type="submit" name="edit_btn" class="btn btn-success">EDIT</button>
-								<form>
+								</form>
 						</td>
 						<td>
 								<button type="submit"class="btn btn-danger">DELETE</button>
