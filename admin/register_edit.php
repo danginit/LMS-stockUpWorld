@@ -18,15 +18,13 @@
   <?php
 
   $connection = mysqli_connect("localhost","root","","signup");
-  if(isset($_GET['edit']))
+  if(isset($_POST['edit_btn']))
   {
-     $id=$_GET['edit'];
-     $query = "SELECT * FROM registration where id=$id";
+     $query = "SELECT * FROM registration";
      $query_run = mysqli_query($connection, $query);
-     $res= $query_run->fetch_array();
 
-}
-
+     foreach($query_run as $row)
+     {
 ?>
 
   <div class="panel panel-container">
@@ -58,12 +56,13 @@
         							<input type="submit" name="" class="btn btn-primary" value="Cancel">
                       <input type="submit" name="updatebtn" class="btn btn-primary" value="Update">
 
-      </form>
+                   </form>
                   <?php
-
-              ?>
-        				</div>
-
+                      }
+                     }?>
+        			  </div>
+                </div>
+                </div>
         			</div>
         		</div><!-- /.col-->
         	</div><!-- /.row -->

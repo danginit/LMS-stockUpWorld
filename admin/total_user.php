@@ -51,7 +51,7 @@
 						<td>
 								<form action="register_edit.php" method="post">
 										<input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
-									<a href="register_edit.php?edit=<?php echo $row['id'];?>">	<button type="submit" name="edit_btn" class="btn btn-success">EDIT</button></a>
+										<button type="submit" name="edit_btn" class="btn btn-success">EDIT</button>
 								<form>
 						</td>
 						<td>
