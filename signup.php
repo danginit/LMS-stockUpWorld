@@ -35,6 +35,7 @@ include 'db_connect.php';
 		$mobile = mysqli_real_escape_string($con, $_POST['mobile']);
 		$password = mysqli_real_escape_string($con, $_POST['password']);
 		$cfmpassword = mysqli_real_escape_string($con, $_POST['cfmpassword']);
+		$affiliate = mysqli_real_escape_string($con, $_POST['affiliate']);
 
 		$pass = password_hash($password, PASSWORD_BCRYPT);
 		$cpass = password_hash($cfmpassword, PASSWORD_BCRYPT);
@@ -52,8 +53,8 @@ include 'db_connect.php';
 		{
 			if($password === $cfmpassword)
 			{
-				$insertquery = "insert into registration(username,email,mobile,password,cpassword)
-				values('$username','$email','$mobile','$pass','$cpass')";
+				$insertquery = "insert into registration(username,email,mobile,password,cpassword,affiliate)
+				values('$username','$email','$mobile','$pass','$cpass','$affiliate')";
 
 				$iquery = mysqli_query($con, $insertquery);
 

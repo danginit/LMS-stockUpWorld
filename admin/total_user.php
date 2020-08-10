@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include('sidebar/sidebar.php');?>
 
@@ -37,6 +37,7 @@ include('sidebar/sidebar.php');?>
 							 $query = "SELECT id,username,email,mobile,affiliate FROM registration";
 							 $query_run = mysqli_query($connection, $query);
               ?>
+
     <tbody>
       <?php
       if(mysqli_num_rows($query_run)>0)
@@ -65,6 +66,18 @@ include('sidebar/sidebar.php');?>
       }
 			else{
 					echo 'No Record found';
+				}
+				?>
+				<?php
+				if(isset($_SESSION['success']) && $_SESSION['success'] !='')
+				{
+					echo '<h2> ' .$_SESSION['success'].' </h2>';
+					unset($_SESSION['success']);
+				}
+				if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+				{
+					echo '<h2> ' .$_SESSION['status'].' </h2>';
+					unset($_SESSION['status']);
 				}
 				?>
     </tbody>
