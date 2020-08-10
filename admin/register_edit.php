@@ -41,10 +41,10 @@ include('sidebar/sidebar.php');?>
         			<input class="form-control" value="<?php echo $row['username']?>" name="edit_username" type="text" autofocus="" required>
         			</div>
         					<div class="form-group">
-        								<input class="form-control" value="<?php echo $row['email']?>" name="email" type="edit_email" autofocus="" required>
+        								<input class="form-control" value="<?php echo $row['email']?>" name="edit_email" type="edit_email" autofocus="" required>
         					</div>
         					<div class="form-group">
-        						    <input class="form-control" value="<?php echo $row['mobile']?>" name="mobile" type="edit_mobile" autofocus="" required>
+        						    <input class="form-control" value="<?php echo $row['mobile']?>" name="edit_mobile" type="edit_mobile" autofocus="" required>
         					</div>
         					<div class="form-group">
         							<input class="form-control" value="<?php echo $row['affiliate']?>" name="edit_affiliate" type="text" autofocus="">
