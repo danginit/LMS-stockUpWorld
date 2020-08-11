@@ -153,7 +153,6 @@ if(!isset($_SESSION['username']))
 						<div class="dropdown-content">
 							<a href="my_course.php">My Course</a>
 							<a href="acc_seting.php">Account Setting</a>
-							<a href="purchase_history.php">Purchase History</a>
 						</div>
 						</div>
                     <!-- <a href="manage_profile.php" class="nav-link text-left">Profile</a> -->
