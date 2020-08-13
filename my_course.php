@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include('css/sidebar.php');
+include('css/sidebarMyCourse.php');
 
 /*if(!isset($_SESSION['login']))
 {
@@ -38,7 +38,7 @@ include('css/sidebar.php');
 		        </tr>
 		      </thead>
 							<?php
-							 $connection = mysqli_connect("localhost","root","","signup");
+							 $connection = mysqli_connect("localhost","root","","db_elearning");
 							 $query = "SELECT course_name,enroll_date,end_date FROM courses";
 							 $query_run = mysqli_query($connection, $query);
               ?>

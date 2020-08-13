@@ -151,8 +151,8 @@ if(!isset($_SESSION['username']))
 				  <div class="dropdown">
 				   <button class="dropbtn">Profile</button>
 						<div class="dropdown-content">
-							<a href="my_course.php">My Course</a>
-							<a href="acc_seting.php">Account Setting</a>
+							<a href="my_course.php" target="_blank">My Course</a>
+							<a href="acc_seting.php" target="_blank">Account Setting</a>
 						</div>
 						</div>
                     <!-- <a href="manage_profile.php" class="nav-link text-left">Profile</a> -->
