@@ -257,7 +257,6 @@
 			    <li><a href="affiliate/Affiliate_page.php" target="_blank">Affiliate</a></li>
                 <li><a href="admin/adminLogin.php" target="_blank">Admin login</a></li>
                 <li><a href="#" target="_blank">Privacy Policy</a></li>
-				<li><a href="#" target="_blank">Return Policy</a></li>
             </ul>
           </div>
           <div class="col-lg-3">

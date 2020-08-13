@@ -23,7 +23,7 @@ include('sidebar/sidebar.php');?>
 				<table class="table" id="dataTable" width="100%" cellspacing="0">
 		      <thread>
 		        <tr>
-							<th>Id</th>
+							<!--<th>Id</th>-->
 							<th>Name</th>
 							<th>Email</th>
 							<th>Mobile</th>
@@ -46,7 +46,7 @@ include('sidebar/sidebar.php');?>
         {
 					?>
 					<tr>
-						<td> <?php echo $row['id']; ?></td>
+						<!--<td> <?php #echo $row['id']; ?></td>-->
 						<td> <?php echo $row['username']; ?></td>
 						<td> <?php echo $row['email']; ?></td>
 						<td> <?php echo $row['mobile']; ?></td>
@@ -58,7 +58,10 @@ include('sidebar/sidebar.php');?>
 								</form>
 						</td>
 						<td>
-								<button type="submit"class="btn btn-danger">DELETE</button>
+								<form action="deleteUser.php" method="post">
+										<input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+										<button type="submit" name="delete_btn" class="btn btn-danger">DELETE</button>
+								</form>
 						</td>
 					<tr>
         <?php

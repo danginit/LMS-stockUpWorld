@@ -62,7 +62,10 @@
 								<button type="submit"class="btn btn-success">EDIT</button>
 						</td>
 						<td>
-								<button type="submit"class="btn btn-danger">DELETE</button>
+								<form action="delete_affiliate.php" method="post">
+										<input type="hidden" name="delete_id" value="<?php echo $row["refer_id"]; ?>">
+										<button type="submit" name="delete_btn" class="btn btn-danger">DELETE</button>
+								</form>
 						</td>						
 					<tr>
 					<?php

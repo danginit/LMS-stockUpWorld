@@ -322,7 +322,6 @@ if(!isset($_SESSION['username']))
             <ul class="list-unstyled">
                 <li><a href="#">Affiliate</a></li>
                 <li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Return Policy</a></li>
                 
             </ul>
           </div>
