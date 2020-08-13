@@ -1,37 +1,35 @@
 <?php 
 session_start();
-include('css/sidebarCngPass.php');
+include('sidebar/sidebar.php');
 
-if(!isset($_SESSION['username']))
-{
-	header('location: index.php');
-}
+#if(!isset($_SESSION['username']))
+#{
+#	header('location: index.php');
+#}
 
 include 'db_connect.php';
 
 	if(isset($_POST['submit']))
 	{
-		$email = $_POST['email'];
-		$old_pass = $_POST['old_pass'];
+
 		$new_password = $_POST['new_password'];
 		$new_cfmpassword =$_POST['new_cfmpassword'];
 
 		$pass = password_hash($new_password, PASSWORD_BCRYPT);
-		$cpass = password_hash($new_cfmpassword, PASSWORD_BCRYPT);
 
-		$emailquery = "select * from registration where email='$email'";
+		$emailquery = "select * from admin";
 		$query = mysqli_query($con,$emailquery);
 
 		$email_pass = mysqli_fetch_assoc($query);
 		$db_pass = $email_pass["password"];
-		$pass_decode = password_verify($old_pass, $db_pass);
+		#$pass_decode = password_verify($, $db_pass);
 
 
-				if($pass_decode)
+				if($db_pass)
 				{
 					if($new_password == $new_cfmpassword)
 					{
-					$updatequery = "update registration set password='$pass', cpassword='$cpass' where email='$email'";
+					$updatequery = "update admin set password='$pass' where username='admin'";
 
 					$iquery = mysqli_query($con, $updatequery);
 
@@ -39,17 +37,16 @@ include 'db_connect.php';
 					{
 						?>
 						<script>
-							alert("Updated Successful");
+							alert("Password has been changed");
 						</script>
 						<?php
-						#header('location: login.php');
 					}
 					else
 					{
 
 						?>
 						<script>
-							alert(" not Updated");
+							alert(" Password has not been changed");
 						</script>
 						<?php
 					}
@@ -57,14 +54,9 @@ include 'db_connect.php';
 				}
 				else
 				{
-					echo "password are not matching";
+					echo "Password are not Matching";
 				}
 			
-		#}
-		#else
-		#{
-		#	echo "Invalid Email";
-		#}
 	}
 
 ?>
@@ -89,12 +81,6 @@ include 'db_connect.php';
 			<form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST" >
 						<fieldset>
 							
-							<div class="form-group">
-								<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="" required>
-							</div>
-							<div class="form-group">
-								<input class="form-control" placeholder="Old Password" name="old_pass" type="password" autofocus="" required>
-							</div>
 							<div class="form-group">
 								<input class="form-control" placeholder="New Password" name="new_password" type="password" autofocus="" required>
 							</div>

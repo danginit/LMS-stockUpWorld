@@ -46,6 +46,7 @@
 			<li class="active"><a href="manage-users.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li ><a href="total_user.php"><em class="fa fa-users">&nbsp;</em> Total User</a></li>
 			<li ><a href="affliate.php"><em class="fa fa-user">&nbsp;</em> Affliate</a></li>
+			<li ><a href="changePass.php"><em class="fa fa-user">&nbsp;</em> Change Password</a></li>
 			<li ><a href="adminLogout.php"><em class="fa fa-sign-out">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div><!--/.sidebar-->

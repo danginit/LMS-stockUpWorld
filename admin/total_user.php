@@ -18,7 +18,7 @@ include('sidebar/sidebar.php');?>
 			</div>
 		</div><!--/.row-->
 
-		<div class="panel panel-container">
+		<div class="panel panel-container" style="padding:25px;">
 			<div class="row">
 				<table class="table" id="dataTable" width="100%" cellspacing="0">
 		      <thread>
