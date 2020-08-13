@@ -12,7 +12,7 @@ if(isset($_POST['updatebtn']))
     $affiliate = $_POST['edit_affiliate'];
 
 
-    $query = "UPDATE registration SET username='$username',email='$email',mobile='$mobile',affiliate='$affiliate' WHERE Id = '$id' ";
+    $query = "UPDATE registration SET username='$username', email='$email', mobile='$mobile', affiliate='$affiliate' WHERE Id = '$id' ";
     $query_run = mysqli_query($connection, $query);
 
     if($query_run)
