@@ -19,7 +19,7 @@ exit();
 else
 {
 $_SESSION['action1']="*Invalid username or password";
-$extra="index.php";
+$extra="adminLogin.php";
 echo "<script>window.location.href='".$extra."'</script>";
 exit();
 }

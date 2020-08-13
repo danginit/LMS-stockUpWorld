@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2020 at 08:24 AM
+-- Generation Time: Aug 11, 2020 at 10:23 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_elearning`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `Id` int(10) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`Id`, `username`, `password`) VALUES
+(1, 'admin', 'ceb6c970658f31504a901b89dcd3e461');
 
 -- --------------------------------------------------------
 
@@ -45,173 +64,62 @@ INSERT INTO `affiliate_id` (`Serial number`, `name`, `phone_number`, `email`, `r
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblautonumbers`
+-- Table structure for table `courses`
 --
 
-CREATE TABLE `tblautonumbers` (
-  `AUTOID` int(11) NOT NULL,
-  `AUTOSTART` varchar(30) NOT NULL,
-  `AUTOEND` int(11) NOT NULL,
-  `AUTOINC` int(11) NOT NULL,
-  `AUTOKEY` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `courses` (
+  `id` int(11) NOT NULL,
+  `course_name` varchar(255) NOT NULL,
+  `enroll_date` datetime NOT NULL,
+  `end_date` datetime NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tblautonumbers`
+-- Dumping data for table `courses`
 --
 
-INSERT INTO `tblautonumbers` (`AUTOID`, `AUTOSTART`, `AUTOEND`, `AUTOINC`, `AUTOKEY`) VALUES
-(1, '02983', 8, 1, 'userid'),
-(10, '000', 3, 1, 'ExerciseID'),
-(12, '000', 34, 1, 'BLOGID'),
-(13, '0', 5, 1, 'STUDENTID');
+INSERT INTO `courses` (`id`, `course_name`, `enroll_date`, `end_date`, `status`) VALUES
+(1, 'Stock Exchange', '2020-08-11 12:40:23', '2020-11-11 12:40:23', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblexercise`
+-- Table structure for table `registration`
 --
 
-CREATE TABLE `tblexercise` (
-  `ExerciseID` int(11) NOT NULL,
-  `LessonID` int(11) NOT NULL,
-  `Question` text NOT NULL,
-  `ChoiceA` text NOT NULL,
-  `ChoiceB` text NOT NULL,
-  `ChoiceC` text NOT NULL,
-  `ChoiceD` text NOT NULL,
-  `Answer` varchar(90) NOT NULL,
-  `ExercisesDate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `registration` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `mobile` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `cpassword` varchar(255) NOT NULL,
+  `affiliate` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tblexercise`
+-- Dumping data for table `registration`
 --
 
-INSERT INTO `tblexercise` (`ExerciseID`, `LessonID`, `Question`, `ChoiceA`, `ChoiceB`, `ChoiceC`, `ChoiceD`, `Answer`, `ExercisesDate`) VALUES
-(20180001, 6, 'What is the title of the video', 'My Father', 'My Mother', 'My Brother', 'My Sister', 'My Sister', '0000-00-00'),
-(20180002, 6, 'Who is the name of the character in the story?', 'Ben', 'Holly', 'Gaston', 'Wise old elf', 'Gaston', '0000-00-00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbllesson`
---
-
-CREATE TABLE `tbllesson` (
-  `LessonID` int(11) NOT NULL,
-  `LessonChapter` varchar(90) NOT NULL,
-  `LessonTitle` varchar(90) NOT NULL,
-  `FileLocation` text NOT NULL,
-  `Category` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbllesson`
---
-
-INSERT INTO `tbllesson` (`LessonID`, `LessonChapter`, `LessonTitle`, `FileLocation`, `Category`) VALUES
-(9, 'test', 'gsgh', 'files/videoplayback.mp4', 'Video');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblscore`
---
-
-CREATE TABLE `tblscore` (
-  `ScoreID` int(11) NOT NULL,
-  `LessonID` int(11) NOT NULL,
-  `ExerciseID` int(11) NOT NULL,
-  `StudentID` int(11) NOT NULL,
-  `NoItems` int(11) NOT NULL DEFAULT 1,
-  `Score` int(11) NOT NULL,
-  `Submitted` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblscore`
---
-
-INSERT INTO `tblscore` (`ScoreID`, `LessonID`, `ExerciseID`, `StudentID`, `NoItems`, `Score`, `Submitted`) VALUES
-(9, 6, 20180001, 1, 1, 1, 1),
-(10, 6, 20180002, 1, 1, 1, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblstudent`
---
-
-CREATE TABLE `tblstudent` (
-  `StudentID` int(11) NOT NULL,
-  `Fname` varchar(90) NOT NULL,
-  `Lname` varchar(90) NOT NULL,
-  `Address` varchar(90) NOT NULL,
-  `MobileNo` varchar(90) NOT NULL,
-  `STUDUSERNAME` varchar(90) NOT NULL,
-  `STUDPASS` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblstudent`
---
-
-INSERT INTO `tblstudent` (`StudentID`, `Fname`, `Lname`, `Address`, `MobileNo`, `STUDUSERNAME`, `STUDPASS`) VALUES
-(1, 'a', 'a', 'a', '21', 'a', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8'),
-(2, 'sd', 'sad', 'sad', '231', 'a', 'a0f1490a20d0211c997b44bc357e1972deab8ae3');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblstudentquestion`
---
-
-CREATE TABLE `tblstudentquestion` (
-  `SQID` int(11) NOT NULL,
-  `ExerciseID` int(11) NOT NULL,
-  `LessonID` int(11) NOT NULL,
-  `StudentID` int(11) NOT NULL,
-  `Question` varchar(90) NOT NULL,
-  `CA` varchar(90) NOT NULL,
-  `CB` varchar(90) NOT NULL,
-  `CC` varchar(90) NOT NULL,
-  `CD` varchar(90) NOT NULL,
-  `QA` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblstudentquestion`
---
-
-INSERT INTO `tblstudentquestion` (`SQID`, `ExerciseID`, `LessonID`, `StudentID`, `Question`, `CA`, `CB`, `CC`, `CD`, `QA`) VALUES
-(1, 20180002, 0, 1, 'Who is the name of the character in the story?', 'Ben', 'Holly', 'Gaston', 'Wise old elf', 'Gaston'),
-(2, 20180002, 0, 2, 'Who is the name of the character in the story?', 'Ben', 'Holly', 'Gaston', 'Wise old elf', 'Gaston');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblusers`
---
-
-CREATE TABLE `tblusers` (
-  `USERID` int(11) NOT NULL,
-  `NAME` varchar(90) NOT NULL,
-  `UEMAIL` varchar(90) NOT NULL,
-  `PASS` varchar(90) NOT NULL,
-  `TYPE` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblusers`
---
-
-INSERT INTO `tblusers` (`USERID`, `NAME`, `UEMAIL`, `PASS`, `TYPE`) VALUES
-(1, 'Janno Palacios', 'janobe', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator');
+INSERT INTO `registration` (`id`, `username`, `email`, `mobile`, `password`, `cpassword`, `affiliate`) VALUES
+(4, 'Nitesh', 'niteshdangi80@gmail.com', '9876543210', '$2y$10$yNip4Oeop.qNg6gTLqW85Oo4CTc.3kG0UeDJlpJZG2mMuSixKtE/2', '$2y$10$SprrOlH0IV2t5h1N7ZBWwuwQmtvz8XyZZ5RNWEkMfdt27BPkLaqnG', 'asdgfdrgf'),
+(5, 'Chandan-Kumar', 'niteshdang@gmail.com', '93408637', '$2y$10$qedk8cvGY8VSbPk8r9JPcuD86o6q1XEivJTdAbRUjlLVd7PaGJb9y', '$2y$10$JWPEmMgLWQuFZDK2GlpXQeh70vQJKvACPuvQJIZQ59Ogg8Vyo4dCq', 'ahrdgJHG'),
+(6, 'Nitesh Dangi', 'abcd@gmail.com', '9876663332', '$2y$10$txJT6LkYsvEt/pEmtUW2gOKD/wBX8CVL1LP5mWS/nfATEIdU8Egmu', '$2y$10$A0EJCjqqOfw5lUnZXlGs/.aX85Aokt5JP4IvVKsht5MlLJwjEnnlC', ''),
+(7, 'babu', 'babu@gmail.com', '984562959', '$2y$10$vUUfNT06TB64amZMpRtvyeXBJznB7NxiLaT1SeV3Hk5.8CblY0u2K', '$2y$10$tddLWdzlh34UhXeU37F23OXQbz2YGDtST7ipRupY/75leLXG.Fgga', ''),
+(8, 'ran123', 'raushan@gmail.com', '598616516', '$2y$10$z9G5JlOQuVTSl1BNi7kLi.jU2S33pjFA7ww6jdKjkm/x5kzm3neuC', '$2y$10$sw34zjNMO/p2/SQhCyjcsOhiXS9PhIYLom2x878/Cap9PGh6Lza5u', ''),
+(10, 'a', 'a@gmail.com', '7676424445', '$2y$10$LrZ5fqio8RMumkg6.zOkeekG59O73A4R.0DW.FezIRY1OdNFkAuHa', '$2y$10$QWjGRQMBRHDnVG74aZHIw.AxklujjDzNZUqAfKvKWPBPowzrZhmXm', ''),
+(11, 'Chandan-Kumar-18427057', 'root@gmail.com', '8445153131', '$2y$10$RGh.hdJA1WoK7Qd4kATcueSfAf.Z66bJ3xmUSMvJZcZRvTbVcVtu6', '$2y$10$UfKHnByKO5eZz8zjOslkqOc6JSObRV4/vK9jfFsSj3I78yC1QoX/.', '');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `affiliate_id`
@@ -220,50 +128,26 @@ ALTER TABLE `affiliate_id`
   ADD PRIMARY KEY (`Serial number`);
 
 --
--- Indexes for table `tblautonumbers`
+-- Indexes for table `courses`
 --
-ALTER TABLE `tblautonumbers`
-  ADD PRIMARY KEY (`AUTOID`);
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tblexercise`
+-- Indexes for table `registration`
 --
-ALTER TABLE `tblexercise`
-  ADD PRIMARY KEY (`ExerciseID`);
-
---
--- Indexes for table `tbllesson`
---
-ALTER TABLE `tbllesson`
-  ADD PRIMARY KEY (`LessonID`);
-
---
--- Indexes for table `tblscore`
---
-ALTER TABLE `tblscore`
-  ADD PRIMARY KEY (`ScoreID`);
-
---
--- Indexes for table `tblstudent`
---
-ALTER TABLE `tblstudent`
-  ADD PRIMARY KEY (`StudentID`) USING BTREE;
-
---
--- Indexes for table `tblstudentquestion`
---
-ALTER TABLE `tblstudentquestion`
-  ADD PRIMARY KEY (`SQID`);
-
---
--- Indexes for table `tblusers`
---
-ALTER TABLE `tblusers`
-  ADD PRIMARY KEY (`USERID`);
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `affiliate_id`
@@ -272,46 +156,16 @@ ALTER TABLE `affiliate_id`
   MODIFY `Serial number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tblautonumbers`
+-- AUTO_INCREMENT for table `courses`
 --
-ALTER TABLE `tblautonumbers`
-  MODIFY `AUTOID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `courses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tblexercise`
+-- AUTO_INCREMENT for table `registration`
 --
-ALTER TABLE `tblexercise`
-  MODIFY `ExerciseID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20180003;
-
---
--- AUTO_INCREMENT for table `tbllesson`
---
-ALTER TABLE `tbllesson`
-  MODIFY `LessonID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `tblscore`
---
-ALTER TABLE `tblscore`
-  MODIFY `ScoreID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `tblstudent`
---
-ALTER TABLE `tblstudent`
-  MODIFY `StudentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tblstudentquestion`
---
-ALTER TABLE `tblstudentquestion`
-  MODIFY `SQID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tblusers`
---
-ALTER TABLE `tblusers`
-  MODIFY `USERID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `registration`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

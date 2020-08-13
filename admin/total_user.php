@@ -33,7 +33,7 @@ include('sidebar/sidebar.php');?>
 		        </tr>
 		      </thread>
 							<?php
-							 $connection = mysqli_connect("localhost","root","","signup");
+							 $connection = mysqli_connect("localhost","root","","db_elearning");
 							 $query = "SELECT id,username,email,mobile,affiliate FROM registration";
 							 $query_run = mysqli_query($connection, $query);
               ?>

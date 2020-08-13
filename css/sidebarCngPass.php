@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +23,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>StockUpWorld </span>Courses</a>
+				<a class="navbar-brand" href="#"><span>StockUpWorld </span>Change Password</a>
 				<ul class="nav navbar-top-links navbar-right">
 
 							</li>
@@ -33,14 +36,14 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 		<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Pankaj</div>
+				<div class="profile-usertitle-name"><?php echo $_SESSION['username'];?></div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 		</div>
 		<div class="clear"></div>
 		</div>
 		<div class="divider"></div>
 		<ul class="nav menu">
-			<li class="active"><a href=""><em class="fa fa-dashboard">&nbsp;</em> My Courses</a></li>
+			<li class="active"><a href=""><em class="fa fa-key">&nbsp;</em>Change Password</a></li>
 				
 		</ul>
 	</div><!--/.sidebar-->

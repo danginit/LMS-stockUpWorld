@@ -16,31 +16,57 @@
 			</div>
 		</div><!--/.row-->
 
-		<div class="panel panel-container">
+		<div class="panel panel-container" style="padding:30px;">
 			<div class="row">
 				<table class="table" id="dataTable" width="100%" cellspacing="0">
-		      <thread>
+		      <thead>
 		        <tr>
-		          <th>Admin Name</th>
-		          <th>Number Of Person</th>
+		          <th>Name</th>
+		          <th>refer id</th>
+				  <th>Mobile No.</th>
+				  <th>Total referals</th>
 		        </tr>
-		      </thread>
+		      </thead>
 							<?php
 							 $connection = mysqli_connect("localhost","root","","db_elearning");
-							 $query = "SELECT Fname,MobileNo FROM tblstudent";
+							 $query = "SELECT name,phone_number,refer_id FROM affiliate_id";
 							 $query_run = mysqli_query($connection, $query);
+							 
               ?>
 
     <tbody>
       <?php
       if(mysqli_num_rows($query_run)>0)
       {
-        while($row = mysqli_fetch_assoc($query_run))
+        while($row = mysqli_fetch_assoc($query_run) )
         {
 					?>
 					<tr>
-						<td> <?php echo $row['Fname']; ?></td>
-						<td> <?php echo $row['MobileNo']; ?></td>
+						<td> <?php echo $row['name']; ?></td>
+						<td> <?php echo $row['refer_id']; ?></td>
+						<td> <?php echo $row['phone_number']; ?></td>
+						<?php
+							$connection = mysqli_connect("localhost","root","","db_elearning");
+							$query2 = "SELECT refer_id FROM affiliate_id";
+							$query_run2 = mysqli_query($connection, $query2);
+							if(mysqli_num_rows($query_run2)>0)
+							{
+							while($refer_id = mysqli_fetch_assoc($query_run2))
+								{
+							$ref_id = $refer_id["refer_id"];
+							$connection = mysqli_connect("localhost","root","","db_elearning");
+							$query1 = "SELECT COUNT(id) as count FROM registration where affiliate='$ref_id'";
+							$query_run1 = mysqli_query($connection, $query1);
+							if(mysqli_num_rows($query_run1)>0)
+							{
+								while($row1 = mysqli_fetch_assoc($query_run1) )
+								{
+							
+						?>
+						<td> <?php echo $row1['count']; ?></td>
+						<?php
+								}}
+						?>
 						<td>
 								<button type="submit"class="btn btn-success">EDIT</button>
 						</td>
@@ -48,6 +74,9 @@
 								<button type="submit"class="btn btn-danger">DELETE</button>
 						</td>						
 					<tr>
+					<?php
+							}}
+					?>
         <?php
 			   }
       }

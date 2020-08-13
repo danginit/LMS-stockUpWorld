@@ -81,7 +81,7 @@
                   
                 </li>
                 <li>
-                  <a href="#about us" class="nav-link text-left">About Us</a>
+                  <a href="#about_us" class="nav-link text-left">About Us</a>
                 </li>
                 <li>
                   <a href="#connect_with_us" class="nav-link text-left">Connect with us</a>
@@ -188,7 +188,7 @@
     
 <!----------------------------  About Us ------------------------------>
 
-    <div id="about us" class="section-bg style-1" style="background-image: url('images/about_1.jpg');">
+    <div id="about_us" class="section-bg style-1" style="background-image: url('images/about_1.jpg');">
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
