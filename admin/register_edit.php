@@ -19,7 +19,7 @@ include('sidebar/sidebar.php');?>
 
   <?php
 
-  $connection = mysqli_connect("localhost","root","","signup");
+  $connection = mysqli_connect("localhost","root","","db_elearning");
   if(isset($_POST['edit_btn']))
   {
 	 $id = $_POST['edit_id'];

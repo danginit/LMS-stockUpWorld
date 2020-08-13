@@ -254,16 +254,16 @@
           <div class="col-lg-3">
             <h3 class="footer-heading"><span>Extra Links</span></h3>
             <ul class="list-unstyled">
-			    <li><a href="affiliate/Affiliate_page.php">Affiliate</a></li>
-                <li><a href="admin/adminLogin.php">Admin login</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Return Policy</a></li>
+			    <li><a href="affiliate/Affiliate_page.php" target="_blank">Affiliate</a></li>
+                <li><a href="admin/adminLogin.php" target="_blank">Admin login</a></li>
+                <li><a href="#" target="_blank">Privacy Policy</a></li>
+				<li><a href="#" target="_blank">Return Policy</a></li>
             </ul>
           </div>
           <div class="col-lg-3">
               <h3 class="footer-heading"><span>Our Courses</span></h3>
               <ul class="list-unstyled">
-                  <li><a href="#">StockExchange</a></li>
+                  <li><a href="#" target="_blank">StockExchange</a></li>
                   
               </ul>
           </div>
