@@ -46,14 +46,7 @@
 						<td> <?php echo $row['refer_id']; ?></td>
 						<td> <?php echo $row['phone_number']; ?></td>
 						<?php
-							$connection = mysqli_connect("localhost","root","","db_elearning");
-							$query2 = "SELECT refer_id FROM affiliate_id";
-							$query_run2 = mysqli_query($connection, $query2);
-							if(mysqli_num_rows($query_run2)>0)
-							{
-							while($refer_id = mysqli_fetch_assoc($query_run2))
-								{
-							$ref_id = $refer_id["refer_id"];
+							$ref_id = $row["refer_id"];
 							$connection = mysqli_connect("localhost","root","","db_elearning");
 							$query1 = "SELECT COUNT(id) as count FROM registration where affiliate='$ref_id'";
 							$query_run1 = mysqli_query($connection, $query1);
@@ -64,9 +57,7 @@
 							
 						?>
 						<td> <?php echo $row1['count']; ?></td>
-						<?php
-								}}
-						?>
+						
 						<td>
 								<button type="submit"class="btn btn-success">EDIT</button>
 						</td>
