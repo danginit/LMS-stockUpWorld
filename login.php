@@ -1,42 +1,14 @@
 <?php
 session_start();
-if(isset($_SESSION['username']))
+error_reporting(0);
+include("db_connect.php");
+if(isset($_POST['login']))
 {
-	header('location: welcome.php');
-}
-
-
-?>
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/datepicker3.css" rel="stylesheet">
-	<link href="css/styles4.css" rel="stylesheet">
-</head>
-<body>
-
-
-
-<?php
-
-include 'db_connect.php';
-
-if(isset($_POST['submit']))
-{
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-	
+	$email=$_POST['email'];
+	$password=$_POST['password'];
 	$email_search = "select * from registration where email='$email'";
 	$query = mysqli_query($con,$email_search);
 	$email_count = mysqli_num_rows($query);
-	
 	if($email_count)
 	{ 
 		$email_pass = mysqli_fetch_assoc($query);
@@ -47,7 +19,7 @@ if(isset($_POST['submit']))
 		
 		if($pass_decode)
 		{
-			echo "Login Successful";
+			#echo "Login Successful";
 			?>
 			<script>
 				location.replace("welcome.php");
@@ -56,46 +28,71 @@ if(isset($_POST['submit']))
 		}
 		else
 		{
-			echo "Password Incorrect";
+			$_SESSION['action1']="*Invalid password";
+			echo "<meta http-equiv='refresh' content='5;url=login.php'>";
 		}
 	}
 	else
 	{
-		echo "Invalid Email";
+		$_SESSION['action1']="*Invalid Email"; 
+		echo "<meta http-equiv='refresh' content='5;url=login.php'>";
 	}
 }
 
 ?>
-<div style="padding-left:35%;">
-	<div class="row">
-		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-4">
-			<div class="login-panel panel panel-default">
-				<div ><h2 style="text-align:center;">Log in</h2></div>
-				<div class="panel-body">
-					<form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST">
-						<fieldset>
-							<div class="form-group">
-								<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="" required>
-							</div>
-							<div class="form-group">
-								<input class="form-control" placeholder="Password" name="password" type="password" value="" required>
-							</div>
-							<input type="submit" name="submit" class="btn btn-primary" value="Login">
-							<div style="margin-top:10px;">
-								<p>Forgot Password don't worry <a href="recover_email.php">Click here</a><p>
-							</div>
-							<div>
-								<p>Don't have an account? <a href="signup.php">Signup Now</a><p>
-							</div>
-							<!--<a type="submit" name="submit" class="btn btn-primary">Login</a>--></fieldset>
-					</form>
-				</div>
-			</div>
-		</div><!-- /.col-->
-	</div><!-- /.row -->	
-</div>	
 
-<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-</body>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Login</title>
+    <link href="css/login_signup/bootstrap.css" rel="stylesheet">
+    <link href="css/login_signup/font-awesome.css" rel="stylesheet" />
+    <link href="css/login_signup/style6.css" rel="stylesheet">
+    <link href="css/login_signup/style-responsive.css" rel="stylesheet">
+  </head>
+
+  <body>
+	  <div id="login-page">
+	  	<div class="container">
+      
+	  	
+		      <form class="form-login" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="post">
+		        <h2 class="form-login-heading">User Sign In</h2>
+                  <p style="color:#F00; padding-top:20px;" align="center">
+                    <?php echo $_SESSION['action1'];?><?php echo $_SESSION['action1']="";?></p>
+		        <div class="login-wrap">
+		            <input type="email" name="email" class="form-control" placeholder="E-mail" autofocus="" required>
+		            <br>
+		            <input type="password" name="password" class="form-control" placeholder="Password" required><br >
+		            <input  name="login" class="btn btn-theme btn-block" type="submit" value="Login">
+					<div style="margin-top:10px;">
+							<p>Forgot Password don't worry <a href="recover_email.php">Click here</a><p>
+					</div>
+					<div>
+							<p>Don't have an account? <a href="signup.php">Signup Now</a><p>
+					</div>
+		         
+		        </div>
+		      </form>	  	
+	  	
+	  	</div>
+	  </div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch("assets/img/login-bg.jpg", {speed: 500});
+    </script>
+
+
+  </body>
 </html>

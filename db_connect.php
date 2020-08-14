@@ -11,7 +11,7 @@ if($con)
 {
 	?>
 		<script>
-			alert("Connection Successful");
+			/*alert("Connection Successful");*/
 		</script>
 	<?php
 }else{

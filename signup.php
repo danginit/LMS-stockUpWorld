@@ -10,25 +10,29 @@ if(isset($_SESSION['username']))
 
 
 
+
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>signup</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/datepicker3.css" rel="stylesheet">
-	<link href="css/styles4.css" rel="stylesheet">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
+    <title>SignUp</title>
+    <link href="css/login_signup/bootstrap.css" rel="stylesheet">
+    <link href="css/login_signup/font-awesome.css" rel="stylesheet" />
+    <link href="css/login_signup/style6.css" rel="stylesheet">
+    <link href="css/login_signup/style-responsive.css" rel="stylesheet">
+  </head>
 
-
-<?php
+  <body>
+  <?php
 
 include 'db_connect.php';
 
-	if(isset($_POST['submit']))
+	if(isset($_POST['signup']))
 	{
 		$username = mysqli_real_escape_string($con, $_POST['username']);
 		$email = mysqli_real_escape_string($con, $_POST['email']);
@@ -47,7 +51,11 @@ include 'db_connect.php';
 
 		if($emailcount>0)
 		{
-			echo "email already exist";
+			$_SESSION['action1']="*Email Aleady Exist";
+			if("meta http-equiv='refresh'")
+			{
+				echo "<meta http-equiv='refresh' content='5;url=signup.php'>";
+			}
 		}
 		else
 		{
@@ -70,63 +78,60 @@ include 'db_connect.php';
 				{
 
 					?>
-						<script>
-							alert(" not Inserted");
-						</script>
 					<?php
+					$_SESSION['action1']="*Not Inserted";
+					echo "<meta http-equiv='refresh' content='5;url=signup.php'>";
 				}
 			}
 			else
 			{
-				echo "password are not matching";
+				$_SESSION['action1']="*Both password should be same";
+				echo "<meta http-equiv='refresh' content='5;url=signup.php'>";
 			}
 		}
 	}
 
 ?>
-<div style="padding-left:35%;">
-	<div class="row" >
-		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-4" >
-			<div class="login-panel panel panel-default" >
-				<div><h2 style="text-align:center;">Sign Up</h2></div>
-				<div class="panel-body" >
-					<form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST" >
-						<fieldset>
-							<div class="form-group">
-								<input class="form-control" placeholder="Enter Full Name" name="username" type="text" autofocus="" required>
-							</div>
-							<div class="form-group">
-								<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="" required>
-							</div>
-							<div class="form-group">
-								<input class="form-control" placeholder="Mobile no." name="mobile" type="text" autofocus="" required>
-							</div>
-							<div class="form-group">
-								<input class="form-control" placeholder="Password" name="password" type="password" autofocus="" required>
-							</div>
-							<div class="form-group">
-								<input class="form-control" placeholder="Conform Password" name="cfmpassword" type="password" value="" required>
-							</div>
-							<div class="form-group">
-								<input class="form-control" placeholder="Affiliate" name="affiliate" type="text" autofocus="">
-							</div>
+  
+  
+  
+  
+  
+	  <div id="login-page" style="margin-bottom:50px;">
+	  	<div class="container">
+      
+	  	
+		      <form class="form-login" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="post">
+		        <h2 class="form-login-heading">User Sign up</h2>
+                  <p style="color:#F00; padding-top:20px;" align="center">
+                    <?php echo $_SESSION['action1'];?><?php echo $_SESSION['action1']="";?></p>
+		        <div class="login-wrap">
+					<input type="text" name="username" class="form-control" placeholder="Enter Full Name" autofocus="" required>
+		            <br>
+		            <input type="email" name="email" class="form-control" placeholder="E-mail" autofocus="" required>
+		            <br>
+					<input type="text" name="mobile" class="form-control" placeholder="Mobile no." autofocus="" required>
+		            <br>
+		            <input type="password" name="password" class="form-control" placeholder="Password" required><br >
+					<input type="password" name="cfmpassword" class="form-control" placeholder="Confirm Password" required><br >
+					<input type="text" name="affiliate" class="form-control" placeholder="Affiliate" ><br >
+		            <input  name="signup" class="btn btn-theme btn-block" type="submit" value="SignUp">
+					<div style="margin-top:10px;">
+						<p>Have an account? <a href="login.php">Login Now</a><p>
+					</div>
+		         
+		        </div>
+		      </form>	  	
+	  	
+	  	</div>
+	  </div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch("assets/img/login-bg.jpg", {speed: 500});
+    </script>
 
-							<input type="submit" name="submit" class="btn btn-primary" value="Sign Up">
-							<div style="margin-top:10px;">
-								<p>Have an account? <a href="login.php">Login Now</a><p>
-							</div>
-							<!--<div>
-								<p>Have an account? <a href="login.php">Login</a><p>
-							</div>-->
-							<!--<a type="submit" name="submit" class="btn btn-primary">Login</a>--></fieldset>
-					</form>
-				</div>
-			</div>
-		</div><!-- /.col-->
-	</div><!-- /.row -->
 
-</div>
-<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
