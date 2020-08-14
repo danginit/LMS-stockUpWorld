@@ -19,11 +19,11 @@ a, a:hover, a:focus {
 }
 ::selection {
 
-    background: #68dff0;
+    background: ##68dff0;
     color: #fff;
 }
 ::-moz-selection {
-    background: #68dff0;
+    background: ##68dff0;
     color: #fff;
 }
 
@@ -34,7 +34,7 @@ a, a:hover, a:focus {
 
 /* Bootstrap Modifications */
 .modal-header {
-	background: #68dff0;
+	background: ##68dff0;
 }
 
 .modal-title {
