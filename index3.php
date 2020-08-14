@@ -26,7 +26,7 @@
   <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" href="css/style5.css">
-  
+
 
 
 
@@ -50,9 +50,9 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-9 d-none d-lg-block">
-            <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Have a questions?</a> 
-            <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span> +91 9135449155</a> 
-            <a href="https://mail.google.com/" class="small mr-3"><span class="icon-envelope-o mr-2"></span> stockupworld@gmail.com</a> 
+            <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Have a questions?</a>
+            <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span> +91 9135449155</a>
+            <a href="https://mail.google.com/" class="small mr-3"><span class="icon-envelope-o mr-2"></span> stockupworld@gmail.com</a>
           </div>
           <div class="col-lg-3 text-right">
             <a href="login.php" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
@@ -78,7 +78,7 @@
                 </li>
                 <li class="has-childre">
                   <a href="#courses" class="nav-link text-left">Our Courses</a>
-                  
+
                 </li>
                 <li>
                   <a href="#about us" class="nav-link text-left">About Us</a>
@@ -98,21 +98,21 @@
 			  <a href="https://www.youtube.com/channel/UCbSZg89peOsxVGerC2Tmp8A" target="_blank"><span class="icon-youtube"></span></a>
               <a href="https://www.facebook.com/Stock_up_world-111475723893008/" target="_blank"><span class="icon-facebook"></span></a>
               <a href="https://wa.me/917004471316" target="_blank"><span class="icon-whatsapp"></span></a>
-              
+
 
               <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
                 class="icon-menu h3"></span></a>
             </div>
           </div>
-         
+
         </div>
       </div>
 
     </header>
 
-    <!------------------------------ Slider --------------------------> 
-	
-	
+    <!------------------------------ Slider -------------------------->
+
+
     <div class="hero-slide owl-carousel site-blocks-cover">
       <div class="intro-section" style="background-image: url('images/stock1.jpg');">
         <div class="container">
@@ -135,17 +135,17 @@
 			  <p style="margin-left:34%;"><a href="http://tinyurl.com/yx7d9fhg" class="btn btn-primary rounded-0 px-4" target="_blank">Angel Broker</a></p>
 			  </div>
             </div>
-			
+
           </div>
         </div>
       </div>
 
     </div>
-    
 
-    
-<!------------------------------------ Courses ---------------------> 
-   
+
+
+<!------------------------------------ Courses --------------------->
+
 
 
     <div id="courses" class="site-section">
@@ -168,24 +168,24 @@
                     <figure class="thumnail">
                       <a href="course-single.html"><img src="images/course_1.jpg" alt="Image" class="img-fluid"></a>
                       <div class="price">$99.00</div>
-                      <div class="category"><h3>Stock Exchange</h3></div>  
+                      <div class="category"><h3>Stock Exchange</h3></div>
                     </figure>
                     <div class="course-1-content pb-4">
                       <h2>How To Create Mobile Apps Using Ionic</h2>
-                      
+
                       <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
                       <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
                     </div>
                   </div>
-      
+
               </div>
-      
+
           </div>
-        </div> 
+        </div>
       </div>
     </div>
 
-    
+
 <!----------------------------  About Us ------------------------------>
 
     <div id="about us" class="section-bg style-1" style="background-image: url('images/about_1.jpg');">
@@ -208,12 +208,12 @@
       </div>
     </div>
 
-    
- 
-   <!---------------------------  Connect with us ------------------------------> 
 
-   
-    
+
+   <!---------------------------  Connect with us ------------------------------>
+
+
+
     <div id="connect_with_us" class="Connect-with-us">
       <div class="container">
           <div class="row mb-5 justify-content-center text-center">
@@ -240,7 +240,7 @@
       </div>
     </div>
 
-   
+
 <!---------------------------------- Footer ------------------------------------->
 
     <div id="contact"  class="footer">
@@ -248,7 +248,7 @@
         <div class="row">
           <div class="col-lg-3">
             <p class="mb-4"><img src="images/logo.png" alt="Image" class="img-fluid"></p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo minima qui dolor, iusto iure.</p>  
+            <p>Lorem ipsum dolor sit amet consectetur adi.</p>
             <p><a href="#">Learn More</a></p>
           </div>
           <div class="col-lg-3">
@@ -257,31 +257,31 @@
 			    <li><a href="affiliate/Affiliate_page.php">Affiliate</a></li>
                 <li><a href="admin/adminLogin.php">Admin login</a></li>
                 <li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Return Policy</a></li>
             </ul>
           </div>
           <div class="col-lg-3">
               <h3 class="footer-heading"><span>Our Courses</span></h3>
               <ul class="list-unstyled">
                   <li><a href="#">StockExchange</a></li>
-                  
+
               </ul>
           </div>
           <div class="col-lg-3">
               <h3 class="footer-heading"><span>Contact</span></h3>
               <ul class="list-unstyled">
-                  <li><a href="#">Add:- nasriganj Biscuit factory more main road Digha,patna(800012)</a></li>
-                  <li><a href="#">+91 9135449155</a></li>
-				  <li><a href="#">+91 7004471316</a></li>
-                  <li><a href="#">stockupworld@gmail.com</a></li>
+                  <li><a href="#">Address:- </li>
+                  <li><a href="#">Nasriganj Biscuit factory more main road Digha, Patna-800012 </a> </li>
+                  <li><a href="#">+91 9135449155 </a></li>
+				          <li><a href="#">+91 7004471316 </a></li>
+                  <li><a href="#">stockupworld@gmail.com </a></li>
               </ul>
           </div>
         </div>
 
-       
+
       </div>
     </div>
-    
+
 
   </div>
   <!-- .site-wrap -->
