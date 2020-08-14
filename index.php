@@ -157,7 +157,11 @@
         </div>
 
         <div class="row">
+<<<<<<< HEAD
           <div class="col-11">
+=======
+          <div class="col-8">
+>>>>>>> bae1d6549962d91e402f287639b82020948c2666
               <div >
                   <div class="course-1-item">
                     <figure class="thumnail">
