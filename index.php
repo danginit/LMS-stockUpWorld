@@ -114,7 +114,7 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
-              <h1>You can Learn Share Market</h1>
+              <h1>Learn Share Market with us</h1>
             </div>
           </div>
         </div>
@@ -152,21 +152,18 @@
             <h2 class="section-title-underline mb-3">
               <span>Our Courses</span>
             </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, id?</p>
           </div>
         </div>
 
         <div class="row">
-<<<<<<< HEAD
           <div class="col-11">
-=======
           <div class="col-8">
->>>>>>> bae1d6549962d91e402f287639b82020948c2666
+
               <div >
                   <div class="course-1-item">
                     <figure class="thumnail">
                       <a href="course-single.html"><img src="images/course_1.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="price">$99.00</div>
+                      <div class="price"><strong>₹ 777</strong></div>
                       <div class="category"><h3>Stock Exchange</h3></div>
                     </figure>
                     <div class="course-1-content pb-4">
@@ -229,13 +226,8 @@
             <div class="social-wrap" style="padding:40px;margin-left:35%;">
               <a href="https://www.facebook.com/Stock_up_world-111475723893008/" target="_blank"><span class="icon-facebook"></span></a>
               <a href="https://www.linkedin.com/in/pankaj-kumar-94910a1a6" target="_blank"><span class="icon-linkedin"></span></a>
-			  <a href="https://www.youtube.com/channel/UCbSZg89peOsxVGerC2Tmp8A" target="_blank"><span class="icon-youtube"></span></a>
-			  <a href="STOCKUPWORLD@GMAIL.COM" target="_blank"><span class="icon-google-plus" ></span></a>
-			  <a href="https://wa.me/917004471316" target="_blank"><span class="icon-whatsapp"></span></a>
-			  <a href="https://instagram.com/stockupword?igshid=4vdraswdi8sz" target="_blank"><span class="icon-instagram"></span></a>
-
-              <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
-                class="icon-menu h3"></span></a>
+			        <a href="https://wa.me/917004471316" target="_blank"><span class="icon-whatsapp"></span></a>
+			        <a href="https://instagram.com/stockupword?igshid=4vdraswdi8sz" target="_blank"><span class="icon-instagram"></span></a>
             </div>
           </div>
       </div>
